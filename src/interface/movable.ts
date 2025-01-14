@@ -1,8 +1,8 @@
 /**
- * IMovable インターフェース
+ * IMovableインターフェース
  */
 export default interface IMovable {
-  move(): void;
-  accelerate(): void;
-  stop(): void;
+  move(): void; // 移動
+  accelerate(): void; // 加速
+  stop(): void; // 停止
 }

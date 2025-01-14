@@ -1,4 +1,10 @@
+/**
+ * Screenクラス
+ */
 export default class Screen {
+  /**
+   * アクセサ
+   */
   static get width(): number {
     return document.body.clientWidth;
   }

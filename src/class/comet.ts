@@ -1,6 +1,6 @@
 import MovableObject from "./movableObject";
-import { Util } from "../utility/util";
 import { CometParams } from "../utility/type";
+import { Util } from "../utility/util";
 
 /**
  * Cometクラス
@@ -8,14 +8,14 @@ import { CometParams } from "../utility/type";
 export default class Comet extends MovableObject {
   /**
    * コンストラクタ
-   * @param params 初期化パラメータ
+   * @param params        初期化パラメータ
    */
   constructor(params: CometParams) {
     super({
       element: Util.createElement({
         name: "img",
         attr: {
-          src: "/src/assets/images/comet.png",
+          src: "./assets/images/comet.png",
           class: "blink",
         },
       }),

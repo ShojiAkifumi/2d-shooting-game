@@ -10,17 +10,18 @@ export default class Player extends MovableObject {
   /**
    * プロパティ
    */
-  protected _speed: number;
+  protected _speed: number; // 速さ
   protected readonly _keyboard: Keyboard; // キーボード制御用
+
   /**
    * コンストラクタ
-   * @param params 初期化パラメータ
+   * @param params        初期化パラメータ
    */
   constructor(params: PlayerParams) {
     super({
       element: Util.createElement({
         name: "img",
-        attr: { src: "/src/assets/images/player.png" },
+        attr: { src: "./assets/images/player.png" },
       }),
       velocity: { x: 0, y: 0 },
       acceleration: { x: 0, y: 0 },
@@ -29,11 +30,12 @@ export default class Player extends MovableObject {
     this._speed = params.speed;
     this._keyboard = params.keyboard;
   }
+
   /**
    * 移動
    */
-  override move(): void {
-    //移動更新
+  move(): void {
+    // 速度更新
     if (this._keyboard.up && !this._keyboard.down) {
       this.velocity.y = this._speed;
     } else if (!this._keyboard.up && this._keyboard.down) {
@@ -48,7 +50,9 @@ export default class Player extends MovableObject {
     } else {
       this.velocity.x = 0;
     }
+    // 移動
     super.move();
+    // 境界チェック
     this.position = Util.clampScreen(this, true);
   }
 }
